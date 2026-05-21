@@ -15,7 +15,7 @@ public:
 
     vector2D operator+(const vector2D& v ) const;
     vector2D operator*(double escalar) const;
-    vector2D operator-(double escalar) const;
+    vector2D operator-(const vector2D& v) const;
 
     double modulo() const;
     double productoPunto(const vector2D& v) const;

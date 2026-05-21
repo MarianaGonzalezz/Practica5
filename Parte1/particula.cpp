@@ -4,7 +4,7 @@
 particula::particula(int id,
                      vector2D posicion, vector2D velocidad,
                      double masa, double radio)
-    : id(id), posicion(posicion), masa(masa), radio(radio), activa(true) {}
+    : id(id), posicion(posicion), velocidad(velocidad), masa(masa), radio(radio), activa(true) {}
 
 int particula::getId() const {return id;}
 

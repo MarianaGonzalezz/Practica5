@@ -216,7 +216,3 @@ std::vector<particula*> simulador::getParticulasActivas() const {
     }
     return activas;
 }
-
-
-
-
