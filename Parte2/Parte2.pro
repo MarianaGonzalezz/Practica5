@@ -9,16 +9,10 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    obstaculo.cpp \
-    proyectil.cpp \
-    simulador.cpp \
     vector2d.cpp
 
 HEADERS += \
     mainwindow.h \
-    obstaculo.h \
-    proyectil.h \
-    simulador.h \
     vector2d.h
 
 FORMS += \
