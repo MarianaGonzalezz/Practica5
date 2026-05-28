@@ -1,6 +1,6 @@
 #include "obstaculo.h"
 
-Obstaculo::Obstaculo(vector2D posicion, double ancho, double alto, double resistencia)
+obstaculo::obstaculo(vector2D posicion, double ancho, double alto, double resistencia)
     : posicion(posicion), ancho(ancho), alto(alto), resistencia(resistencia) {}
 
 vector2D obstaculo::getPosicion() const{ return posicion;}

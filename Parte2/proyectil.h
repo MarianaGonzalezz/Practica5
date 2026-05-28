@@ -19,7 +19,8 @@ public:
     proyectil(vector2D posicion,
               vector2D velocidad,
               double masa,
-              double radio);
+              double radio,
+              bool activo);
 
     //Getters
 
