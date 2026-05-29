@@ -14,11 +14,11 @@ bool caja::colisionPared(const proyectil& proy) const
     double radio = proy.getRadio();
 
     // Colisión con bordes izquierdo o derecho
-    if (pos.x - radio <= 0 || pos.x + radio >= ancho)
+    if (pos.getX() - radio <= 0 || pos.getX() + radio >= ancho)
         return true;
 
     // Colisión con bordes superior o inferior
-    if (pos.y - radio <= 0 || pos.y + radio >= alto)
+    if (pos.getY() - radio <= 0 || pos.getY() + radio >= alto)
         return true;
 
     return false;
@@ -31,21 +31,21 @@ void caja::manejarColisionPared(proyectil& proy) const
     double radio = proy.getRadio();
 
     // Rebote en eje X (
-    if (pos.x - radio <= 0) {
-        vel.x = -vel.x;
-        proy.setPosicion(vector2D(radio, pos.y));
-    } else if (pos.x + radio >= ancho) {
-        vel.x = -vel.x;
-        proy.setPosicion(vector2D(ancho - radio, pos.y));
+    if (pos.getX() - radio <= 0) {
+        vel.setX(-vel.getX());
+        proy.setPosicion(vector2D(radio, pos.getY()));
+    } else if (pos.getX() + radio >= ancho) {
+        vel.setX(-vel.getX());
+        proy.setPosicion(vector2D(ancho - radio, pos.getY()));
     }
 
     // Rebote en eje Y
-    if (pos.y - radio <= 0) {
-        vel.y = -vel.y;
-        proy.setPosicion(vector2D(pos.x, radio));
-    } else if (pos.y + radio >= alto) {
-        vel.y = -vel.y;
-        proy.setPosicion(vector2D(pos.x, alto - radio));
+    if (pos.getY() - radio <= 0) {
+        vel.setY(-vel.getY());
+        proy.setPosicion(vector2D(pos.getX(), radio));
+    } else if (pos.getY() + radio >= alto) {
+        vel.setY(-vel.getY());
+        proy.setPosicion(vector2D(pos.getX(), alto - radio));
     }
 
     proy.setVelocidad(vel);

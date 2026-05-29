@@ -38,3 +38,8 @@ vector2D vector2D::normalizar() const{
 double vector2D::distancia(const vector2D &v) const{
     return (*this - v).modulo();
 }
+
+//double vector2D::getX() const { return x; }
+//double vector2D::getY() const { return y; }
+//void setX(double newX) { x = newX; }
+//void setY(double newY) { y = newY; }

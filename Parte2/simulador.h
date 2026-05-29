@@ -8,8 +8,8 @@
 class simulador
 {
 private:
-    jugador jugador1;
-    jugador jugador2;
+    Jugador jugador1;
+    Jugador jugador2;
 
     caja cajaJuego;
 
@@ -29,7 +29,7 @@ public:
     simulador(double anchoCaja, double altoCaja, double dt);
     ~simulador();
 
-    void configurarJugadores (jugador j1, jugador j2);
+    void configurarJugadores (Jugador j1, Jugador j2);
 
     void lanzarProyectil(double angulo, double velocidadInicial);
     void actualizar();

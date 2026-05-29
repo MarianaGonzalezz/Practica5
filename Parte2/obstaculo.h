@@ -2,6 +2,7 @@
 #define OBSTACULO_H
 
 #include "vector2d.h"
+#include "proyectil.h"
 
 class obstaculo
 {
@@ -24,6 +25,7 @@ public:
 
     void recibirGolpe(double golpe);
     bool destruido() const;
+    bool colisionConProyectil(const proyectil& p) const;
 };
 
 #endif // OBSTACULO_H

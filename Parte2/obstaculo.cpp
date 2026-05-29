@@ -22,3 +22,11 @@ void obstaculo::recibirGolpe(double golpe){
 bool obstaculo::destruido() const{
     return resistencia <= 0;
 }
+
+bool obstaculo::colisionConProyectil(const proyectil& p) const{
+    vector2D posP = p.getPosicion();
+    return posP.getX() >= posicion.getX() &&
+    posP.getX() <= posicion.getX() + ancho &&
+    posP.getY() >= posicion.getY() &&
+           posP.getY() >= posicion.getY() + alto;
+}

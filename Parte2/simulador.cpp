@@ -2,13 +2,18 @@
 #include <cmath>
 
 simulador::simulador(double anchoCaja, double altoCaja, double dt)
-    : cajaJuego(anchoCaja, altoCaja),
-    proyectilActual(nullptr), turnoActual(1),
-    dt(dt), factorGolpe(10) {}
+    : jugador1("Jugador 1", 1, 100, altoCaja/2),
+    jugador2("Jugador 2", 2, anchoCaja-100, altoCaja/2),
+    cajaJuego(anchoCaja, altoCaja),
+    proyectilActual(nullptr),
+    turnoActual(1),
+    dt(dt),
+    factorGolpe(10)
+{}
 
 simulador::~simulador(){delete proyectilActual;}
 
-void simulador::configurarJugadores(jugador j1, jugador j2){
+void simulador::configurarJugadores(Jugador j1, Jugador j2){
     jugador1 = j1;
     jugador2 = j2;
 }
@@ -31,7 +36,7 @@ void simulador::lanzarProyectil(double angulo, double velocidadInicial){
 
     delete proyectilActual;
 
-    proyectilActual = new proyectil(origen, velocidad, 1.0, 5);
+    proyectilActual = new proyectil(origen, velocidad, 1.0, 5, true);
 }
 
 void simulador::actualizar(){
@@ -61,7 +66,7 @@ void simulador::detectarColisiones(){
 
 bool simulador::colisionConObstaculos(){
 
-    jugador& enemigo = (turnoActual == 1) ? jugador2:jugador1;
+    Jugador& enemigo = (turnoActual == 1) ? jugador2:jugador1;
 
     for(auto& obstaculo : enemigo.getObstaculos()){
         if(obstaculo.colisionConProyectil(*proyectilActual)){

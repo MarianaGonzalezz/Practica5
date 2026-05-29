@@ -8,11 +8,21 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp \
+    juegoventana.cpp \
+    simulador.cpp \
+    proyectil.cpp \
+    jugador.cpp \
+    obstaculo.cpp \
+    caja.cpp \
     vector2d.cpp
 
 HEADERS += \
-    mainwindow.h \
+    juegoventana.h \
+    simulador.h \
+    proyectil.h \
+    jugador.h \
+    obstaculo.h \
+    caja.h \
     vector2d.h
 
 FORMS += \
